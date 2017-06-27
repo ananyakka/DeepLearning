@@ -1,5 +1,53 @@
 Ananya/ June 2017
 
-<b> Tensorflow installation on Python 3.5.2 (No GPU/ Only CPU) </b>
+Tensorflow installation on Python 3.5.2 (No GPU/ Only CPU):
+[Find your python version $ python3 -V ]
 
+$ sudo apt-get update
 
+$ sudo apt-get install python3-pip python3-dev libffi-dev
+
+Download .whl from the source: https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp34-cp34m-linux_x86_64.whl
+Change the file name to have 35 instead of 34 at both places.
+
+cd to the directory containing the downloaded file
+
+$ sudo pip3 install tensorflow-0.8.0-cp35-cp35m-linux_x86_64.whl
+
+Test:
+
+$ python3
+
+import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+a = tf.constant(10)
+b = tf.constant(32)
+print(sess.run(a + b))
+
+Other python packages:
+
+$ sudo apt-get install python3-matplotlib python3-numpy python3-scipy
+
+$ sudo pip3 install -U scikit-learn
+
+IPython notebook:
+
+$ sudo pip3 install jupyter
+
+Test:
+
+$ jupyter notebook
+
+Create a new python3 notebook.
+
+Run the code below in the cell:
+
+import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+a = tf.constant(10)
+b = tf.constant(32)
+print(sess.run(a + b))
